@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🐻 About Me</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: url('https://cur.cursors-4u.net/food/foo-4/foo333.cur'), auto;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #f5ebe0, #d5bfa3);
+      color: #4b3b2a;
+      overflow-x: hidden;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #d6a370;
+      opacity: 0.4;
+      border-radius: 50%;
+      animation: floatHearts 12s linear infinite;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(100vh) scale(0.6);
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(255, 248, 240, 0.8);
+      border-radius: 0 0 20px 20px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 5px 10px rgba(139, 69, 19, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 28px;
+      color: #8b4513;
+      animation: heartbeat 2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .nav-links a {
+      color: #5e3c23;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 18px;
+    }
+
+    .nav-links a:hover {
+      color: #ffdd57;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+      animation: fadeIn 2s ease;
+      z-index: 1;
+      position: relative;
+      padding-bottom: 50px;
+    }
+
+    .content h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 38px;
+      color: #a0522d;
+      text-shadow: 0 2px 4px rgba(139, 69, 19, 0.3);
+      margin-bottom: 10px;
+    }
+
+    .sparkles {
+      font-size: 26px;
+      animation: sparkleWiggle 2s infinite ease-in-out;
+    }
+
+    @keyframes sparkleWiggle {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #6e4c2f;
+    }
+
+    .image-box {
+      border: 4px solid #8b4513;
+      border-radius: 15px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 4px 10px rgba(139, 69, 19, 0.3);
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .about-wedges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px 20px;
+    }
+
+    .wedge-card {
+      background: #fff8ee;
+      border: 2px dashed #a97452;
+      border-radius: 16px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 3px 3px 8px rgba(139, 69, 19, 0.2);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .wedge-card:hover {
+      transform: scale(1.05);
+    }
+
+    .wedge-card h3 {
+      font-family: 'Pacifico', cursive;
+      color: #a0522d;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .wedge-card p {
+      font-size: 16px;
+      color: #6e4c2f;
+      line-height: 1.4;
+    }
+
+    .vinyl-container {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #2b2b2b 60%, #1a1a1a 100%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      margin: 15px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .vinyl-container.spin {
+      animation: spin 4s linear infinite;
+    }
+
+    .vinyl-label {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+    }
+
+    .vinyl-container audio {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%; 
+      background: #fff;
+      z-index: 4;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+.vinyl-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+}
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .about-wedges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 20px;
+      padding: 30px 20px;
+    }
+
+    .wedge-card {
+      display: block;
+      width: 100%;
+      max-width: 350px;
+      padding: 20px;
+      background-color: #FFEFE8;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .wedge-card img {
+      width: 50%;
+      height: auto;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .wedge-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .wedge-card p {
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    .wedge-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .wedge-card:hover h3, .wedge-card:hover p {
+      color: #FF6347;
+    }
+
+.site-footer {
+  text-align: center;
+  padding: 20px 0; /* 20px top and bottom, 0 left and right */
+  font-size: 0.875em;
+  color: var(--text-muted, #666);
+  background-color: var(--footer-bg, transparent);
+}
+
+
+  </style>
+</head>
+<body>
+
+
+  <div class="hearts">
+    <div class="heart" style="left:10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left:25%; animation-delay: 2s;"></div>
+    <div class="heart" style="left:40%; animation-delay: 4s;"></div>
+    <div class="heart" style="left:60%; animation-delay: 1s;"></div>
+    <div class="heart" style="left:75%; animation-delay: 3s;"></div>
+    <div class="heart" style="left:90%; animation-delay: 5s;"></div>
+  </div>
+
+
+  <nav>
+    <div class="logo nav-links">
+      <a href="indexme.htm">🐻 Home</a>
+    </div>
+    <div class="nav-links">
+      <a href="hobbyme.htm">Hobby</a>
+      <a href="musicme.htm">Music</a>
+      <a href="foodme.htm">Food</a>
+      <a href="educationme.htm">Education</a>
+      <a href="contactme.htm">Contact</a>
+    </div>
+  </nav>
+
+
+  <div class="content">
+    <div class="sparkles"><h1>This is about me ⋆˚𝜗𝜚˚⋆</h1></div>
+
+    <div class="image-box">
+      <img src="me1.jpg" alt="me" width="300" height="auto">
+    </div>
+
+    <div class="about-wedges">
+      <a href="hobbyme.htm" class="wedge-card">
+        <h3>✏️ Hobbies</h3>
+        <img src="maru.jpg" alt="Webtoon Image" class="wedge-image">
+        <p>watching, reading, and listening ✨</p>
+      </a>
+
+      <a href="musicme.htm" class="wedge-card">
+  <h3>🎵 Music Vibes</h3>
+  <p>Pop, K-R&B, R&B, and Alternative 🎧</p>
+
+  <div class="vinyl-container" id="vinyl">
+    <div class="vinyl-hole">
+      <img src="min2.jpeg" class="vinyl-label" alt="Bibi Vinyl Label">
+    </div>
+
+  </div>
+</a>
+
+
+      <a href="funfactme.htm" class="wedge-card">
+        <h3>💭 Fun Fact</h3>
+        <img src="hfriends.jpg" alt="friend image" class="wedge-image">
+        <p>One of my group friends that I've known since high-school ꪆ
+          They're so precious to me. We made a promise, to meet-up once a year. It's might sounds easy but it's not for us.
+        </p>
+      </a>
+
+      <a href="aboutme.htm" class="wedge-card">
+        <h3>📖 About Me</h3>
+        <p>My name is Nurul Nadhilah binti Rosli. I'm 21 years old. I have 5 siblings and I'm the youngest. A student at UITM Merbok. Still in process to graduate from Diploma of Information Management. I love to interact with others. My goals is to be better version of myself. I'm always open to new experiences and learning new things every day. Feel free to explore my interests through the website.</p>
+      </a>
+    </div>
+<div>
+<footer class="site-footer">
+  <p>© 2025 | Made by N ฅ^•ﻌ•^ฅ</p>
+</footer>
+</div>
+
+  </div>
+
+  <script>
+    const vinylContainer = document.getElementById("vinyl");
+    const audio = document.getElementById("audio");
+
+    audio.addEventListener('play', () => {
+      vinylContainer.classList.add('spin');
+    });
+
+    audio.addEventListener('pause', () => {
+      vinylContainer.classList.remove('spin');
+    });
+
+    audio.addEventListener('ended', () => {
+      vinylContainer.classList.remove('spin');
+    });
+  </script>
+
+</body>
+</html>

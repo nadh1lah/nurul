@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🍰 My Foodie Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFF8F0;
+      color: #5D4037;
+    }
+
+    nav {
+      background: #FFD9B7;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-bottom: 3px dashed #FFBFAF;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #A0522D;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: rotate(-3deg) scale(1.05);
+      color: #D2691E;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #8B4513;
+      font-size: 16px;
+      padding: 10px 15px;
+      border-radius: 20px;
+      background-color: #FFE5D4;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #FFD1C1;
+      color: #6B3F1F;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+      padding: 60px 30px 40px;
+      text-align: center;
+    }
+
+    .menu-box {
+      background-color: #FFF3E4;
+      border: 3px dotted #FFBCB3;
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 6px 20px rgba(255, 204, 170, 0.4);
+      width: 80%;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-box:hover {
+      transform: scale(1.01);
+    }
+
+    .menu-box h2 {
+      font-size: 2rem;
+      color: #A0522D;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .menu-box ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+
+    .menu-box ul li {
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+      background-color: #FFEFE8;
+      padding: 10px 15px;
+      border-radius: 15px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .menu-box ul li:hover {
+      background-color: #FFE1D2;
+      transform: translateX(10px);
+    }
+
+    .menu-box ul li::before {
+      content: "✨";
+      margin-right: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #6B3F1F;
+    }
+
+    .media-container {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .media-container video {
+      width: 90%;
+      max-width: 500px;
+      border: 5px solid #FFD1C1;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, border-color 0.3s ease;
+    }
+
+    .media-container video:hover {
+      transform: scale(1.03);
+      border-color: #FFBFAF;
+    }
+
+    .media-container p {
+      font-size: 1rem;
+      color: #8B4513;
+      background: #FFF3E4;
+      padding: 10px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .menu-box {
+        width: 95%;
+      }
+
+      .menu-box h2 {
+        font-size: 1.6rem;
+      }
+
+      .media-container video {
+        width: 100%;
+      }
+
+    footer {
+      background-color: #FFE5D4;
+      padding: 20px 40px;
+      text-align: center;
+      border-top: 2px dashed #FFBFAF;
+      margin-top: 60px;
+    }
+
+    .footer-container p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #8B4513;
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">🐻 MySite</div>
+    <div class="nav-links">
+      <a href="aboutme.htm">About</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="menu-box">
+      <h2>🍴 My Fav Foodies 🍴</h2>
+      <ul>
+        <li>🍜 Ramen – Rich broth, noodles, and toppings like pork, egg, and seaweed. A comforting dish that warms both the body and soul.</li>
+        <li>🍦 Ice Cream – A sweet indulgence in countless flavors like vanilla, chocolate, or matcha. Perfect any time!</li>
+        <li>🫓 Roti Canai – A crispy flatbread served with dhal or curry. A Malaysian favorite!</li>
+        <li>🍖 Rendang – Tender meat slow-cooked in rich coconut milk and spices. So flavorful and aromatic!</li>
+        <li>🍜 Mee Goreng Mamak – Stir-fried noodles with egg, veggies, tofu, and a bit of spice. Always satisfying.</li>
+      </ul>
+    </div>
+
+    <p>🍽️ Food isn’t just fuel—it’s a celebration of culture, comfort, and connection! </p>
+
+
+  <footer>
+    <div class="footer-container">
+      <p>© 2025 | Made by N ฅ^•ﻌ•^ฅ</p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  </div>
+</body>
+</html>

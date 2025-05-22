@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🐻 My Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: url('https://cur.cursors-4u.net/food/foo-4/foo333.cur'), auto;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #f5ebe0, #d5bfa3);
+      color: #4b3b2a;
+      overflow-x: hidden;
+    }
+
+    /* Background hearts */
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #d6a370;
+      opacity: 0.4;
+      border-radius: 50%;
+      animation: floatHearts 12s linear infinite;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(100vh) scale(0.6);
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+      }
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(255, 248, 240, 0.8);
+      border-radius: 0 0 20px 20px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 5px 10px rgba(139, 69, 19, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 28px;
+      color: #8b4513;
+      animation: heartbeat 2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .nav-links a {
+      background: #efdbc9;
+      border-radius: 20px;
+      padding: 8px 16px;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #5e3c23;
+      box-shadow: 0 2px 6px rgba(165, 110, 74, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #e3c1a1;
+      transform: scale(1.1);
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+
+    .content h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 38px;
+      color: #a0522d;
+      text-shadow: 0 2px 4px rgba(139, 69, 19, 0.3);
+      margin-bottom: 10px;
+    }
+
+    .sparkles {
+      font-size: 26px;
+      animation: sparkleWiggle 2s infinite ease-in-out;
+    }
+
+    @keyframes sparkleWiggle {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #6e4c2f;
+    }
+
+    .audio-player {
+      text-align: center;
+      margin: 30px auto;
+    }
+
+    audio {
+      background: #f7ede2;
+      border: 2px dashed #b5835a;
+      border-radius: 12px;
+      padding: 6px;
+      box-shadow: 0 0 8px rgba(139, 69, 19, 0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Footer Styling */
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 248, 240, 0.85);
+      font-size: 14px;
+      color: #5e3c23;
+      font-family: 'Quicksand', sans-serif;
+      border-top: 2px dashed #d6a370;
+      box-shadow: 0 -3px 6px rgba(165, 110, 74, 0.15);
+      margin-top: 40px;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        margin: 6px 0;
+      }
+
+      .content h1 {
+        font-size: 30px;
+      }
+
+      .timer-box {
+        margin-top: 20px;
+        font-size: 20px;
+        background: rgba(255, 248, 240, 0.9);
+        padding: 12px 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(165, 110, 74, 0.2);
+        color: #5e3c23;
+        animation: fadeIn 1.5s ease-in-out;
+        font-weight: 600;
+        line-height: 1.6;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <div class="hearts">
+    <div class="heart" style="left:10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left:25%; animation-delay: 2s;"></div>
+    <div class="heart" style="left:40%; animation-delay: 4s;"></div>
+    <div class="heart" style="left:60%; animation-delay: 1s;"></div>
+    <div class="heart" style="left:75%; animation-delay: 3s;"></div>
+    <div class="heart" style="left:90%; animation-delay: 5s;"></div>
+  </div>
+
+
+  <nav class="nav">
+    <div class="logo">🐻 MySite</div>
+    <div class="nav-links">
+      <a href="aboutme.htm">About</a>
+    </div>
+  </nav>
+
+
+  <div class="content">
+    <div class="sparkles">☁️</div>
+    <h1>Welcome!</h1>
+    <p>Snuggle in with soft vibes </p>
+  </div>
+
+  <div id="datetime" class="timer-box">🕒 Loading cozy time...</div>
+
+
+  <footer class="footer">
+    <p>© 2025 | Made by N ฅ^•ﻌ•^ฅ</p>
+  </footer>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const time = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      const date = now.toLocaleDateString(undefined, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      document.getElementById('datetime').innerHTML = `🕒 <strong>${time}</strong><br>📅 <em>${date}</em>`;
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
+
+
+  <div class="audio-player">
+    <audio controls autoplay loop hidden>
+      <source src="bittersweet ft.leehi.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hobby</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+      color: #5e4033;
+      background-color: #f7efe5;
+    }
+
+    .background {
+      background: url('floweraboutme.jpg') no-repeat center center/cover;
+      filter: blur(4px) brightness(0.9);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    .overlay {
+      background: rgba(255, 245, 235, 0.7);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: rgba(255, 230, 200, 0.8);
+      color: #7a5548;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+    }
+
+    .nav-links a {
+      color: #7a5548;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #d89570;
+    }
+
+    .content, .picture, .video {
+      background-color: #fff8f2;
+      margin: 30px auto;
+      max-width: 800px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    h1, h2, h3 {
+      color: #a06c58;
+      margin-bottom: 15px;
+    }
+
+    .content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .content ul li {
+      padding: 10px 0;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .content ul li:hover {
+      color: #e09b7d;
+      transform: translateX(12px);
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 15px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      max-width: 100%;
+    }
+
+    video {
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      max-width: 90%;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .series {
+      background-color: #fff8f2;
+      margin: 30px auto;
+      max-width: 800px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .series h4 {
+      color: #a06c58;
+      margin-bottom: 15px;
+    }
+
+    .series .media-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .series .media-flex img,
+    .series .media-flex video {
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .series .media-flex img {
+      max-width: 45%;
+    }
+
+    .series .media-flex video {
+      max-width: 50%;
+    }
+
+    .series p {
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+      color: #5e4033;
+      margin-top: 15px;
+      font-weight: 400;
+    }
+
+    .series:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+      background-color: #f8e1d2;
+    }
+
+    .series .media-flex img:hover,
+    .series .media-flex video:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+
+    /* Footer styles */
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(255, 230, 200, 0.8);
+      color: #7a5548;
+      font-size: 14px;
+      font-family: 'Quicksand', sans-serif;
+      border-top: 2px dashed #d8a77e;
+      box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+      z-index: 1;
+      position: relative;
+      animation: fadeIn 2s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <nav>
+    <div class="logo">🐻 MySite</div>
+    <div class="nav-links">
+      <a href="aboutme.htm">About</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h1>"My Hobby"</h1>
+    <p>A hobby is something I enjoy doing during my free time. It's an activity that makes me feel happy and relaxed. Here are my hobbies:</p>
+    <ul>
+      <li>🍿📺 Watching movies & TV series</li>
+      <li>📖💡 Reading webtoons</li>
+      <li>🎧🎶 Listening to music</li>
+    </ul>
+  </div>
+
+  <div class="picture">
+    <h2>My Rewatch Movie</h2>
+    <img src="hobbymovie-hd.jpeg" alt="Favorite movie" width="200">
+    <p>Harry Potter has many sequel but this is my one pick! Because it raises the stakes with the Triwizard Tournament, featuring exciting challenges and magical creatures. It marks a shift towards darker themes, especially with Voldemort's return. The movie blends action, mystery, and emotional moments, showing how the characters grow and face tough decisions while sticking together. For me it's has a marvellous action and not so heavy plot.</p> 
+  </div>
+
+  <div class="series">
+    <h4>My Favorite TV Series</h4>
+    <div class="media-flex">
+      <img src="percy3.jpg" alt="Percy Jackson & The Olympians" width="250">
+      <video src="Percy.mp4" width="400" controls>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p>Percy Jackson and the Olympians by Rick Riordan follows 12-year-old Percy Jackson, who discovers he's a demigod and the son of Poseidon. Along with his friends Annabeth and Grover, Percy embarks on thrilling quests to save the world from ancient Greek monsters and gods. Packed with humor, adventure, and lessons about friendship and bravery, this series brings Greek mythology into the modern world in an exciting and relatable way.</p>
+  </div>
+
+  <div class="picture">
+    <h2>My current favourite webtoon</h2>
+    <img src="hobbywebtoon.jpg" alt="Favorite movie" width="200">
+    <p>Special Civil Servant is an action-packed webtoon where a shy new government worker, Han Maru, gets thrown into a secret job battling demons that ride in on toxic dust storms. With the fate of the world at stake and monsters drawn to him for mysterious reasons, Maru must fight to survive — and uncover the truth.</p>
+    <p>Genre: Action, Supernatural, Fantasy</p> 
+  </div>
+
+ 
+  <footer class="footer">
+    <p>© 2025 | Made by N ฅ^•ﻌ•^ฅ</p>
+  </footer>
+
+</body>
+</html>

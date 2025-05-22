@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Vibes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f8f1e4;
+      color: #3e2f1c;
+    }
+
+    header {
+      background-color: #d7bfa7;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+
+    .logo {
+      font-size: 24px;
+      text-align: left;
+    }
+
+@keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+}
+
+.nav-links a {
+      color: #5e3c23;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 18px;
+    }
+
+   .nav-links a:hover {
+      color: #ffdd57;
+    }
+
+
+    .content {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fffaf3;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .vinyl-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .vinyl-hole {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-color: #4B3B2F;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .spinning {
+      animation: spin 5s linear infinite;
+    }
+
+    .vinyl-label {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    audio {
+      width: 300px;
+      margin-top: 10px;
+    }
+
+    .description {
+      max-width: 500px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #d7bfa7;
+      margin-top: 50px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>
+    <h1>🎵 Music Vibes</h1>
+    <p>Pop · K-R&B · R&B · Alternative</p>
+    </div>
+
+  </header>
+
+
+   <nav>
+    <div class="logo nav-links">
+      <a href="aboutme.htm">🐻 Back</a>
+    </div>
+  </nav>
+
+
+  <div class="content">
+    <div class="vinyl-container">
+      <div class="vinyl-hole" id="vinyl1">
+        <img src="bibi.jpeg" alt="Vinyl label" class="vinyl-label">
+      </div>
+      <div class="description">
+        <h2>BIBI - Scott & Zelda </h2>
+        <p>Enjoy the soulful sound of BIBI, blending R&B and alternative flavors with emotionally rich vocals.</p>
+        <audio id="audio1" controls>
+          <source src="Bibi.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="content">
+    <div class="vinyl-container">
+      <div class="vinyl-hole" id="vinyl2">
+        <img src="haon2.jpg" alt="Vinyl label" class="vinyl-label">
+      </div>
+      <div class="description">
+        <h2>Haon - Skrr ft. Gissele</h2>
+        <p>Blends infectious hip-hop beats with smooth R&B vibes, creating a dynamic anthem that pulses with energy and attitude.</p>
+        <audio id="audio2" controls>
+          <source src="Skrr.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="content">
+    <div class="vinyl-container">
+      <div class="vinyl-hole" id="vinyl3">
+        <img src="oasis2.jpg" alt="Vinyl label" class="vinyl-label">
+      </div>
+      <div class="description">
+        <h2>Oasis - She's Electric (Remastered)</h2>
+        <p>Brings a fresh, crisp sound to the band's iconic blend of Britpop and alternative rock.</p>
+        <audio id="audio3" controls>
+          <source src="Oasis.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+  </div>
+
+
+<div class="content">
+  <div class="vinyl-container">
+    <div class="vinyl-hole" id="vinyl4">
+      <img src="avril2.jpg" alt="Vinyl label" class="vinyl-label">
+    </div>
+    <div class="description">
+      <h2>Avril Lavigne - I'm with you</h2>
+      <p>A heartfelt ballad that blends pop-punk and emotional vulnerability, capturing the raw feeling of longing. </p>
+      <audio id="audio4" controls>
+        <source src="Avril.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+    &copy; 2025 | Designed by N ฅ՞•ﻌ•՞ฅ with rhythm
+  </footer>
+
+  <script>
+    const players = [
+      { audioId: 'audio1', vinylId: 'vinyl1' },
+      { audioId: 'audio2', vinylId: 'vinyl2' },
+      { audioId: 'audio3', vinylId: 'vinyl3' },
+      { audioId: 'audio4', vinylId: 'vinyl4' }
+
+    ];
+
+    players.forEach(({ audioId, vinylId }) => {
+      const audio = document.getElementById(audioId);
+      const vinyl = document.getElementById(vinylId);
+
+      audio.addEventListener('play', () => {
+        vinyl.classList.add('spinning');
+      });
+
+      audio.addEventListener('pause', () => {
+        vinyl.classList.remove('spinning');
+      });
+
+      audio.addEventListener('ended', () => {
+        vinyl.classList.remove('spinning');
+      });
+    });
+  </script>
+
+</body>
+</html>

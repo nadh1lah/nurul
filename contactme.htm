@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Me</title>
+
+  <!-- 3D Animation Library -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive; /* Playful and cute font */
+      background: linear-gradient(135deg, #f1e0c6, #f4c9a6); /* Soft gradient background */
+      height: 100vh;
+      color: #5f4b3b;
+      display: flex;
+      flex-direction: column; /* Stack elements vertically */
+      justify-content: flex-start; /* Keep content at the top */
+      align-items: center;
+      animation: fadeIn 3s ease-out;
+      padding-bottom: 80px; /* Adds space at the bottom for the footer */
+      perspective: 1000px; /* Create a perspective for 3D effect */
+    }
+
+    .overlay {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(6px);
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      max-width: 450px;
+      width: 90%;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+      animation: floatUp 3s ease-in-out infinite alternate;
+      margin-top: 100px; /* Adjust this value to lower the content */
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+
+    /* 3D hover effect */
+    .overlay:hover {
+      transform: rotateY(15deg) rotateX(15deg);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #5F2016;
+      font-size: 3rem;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #5f4b3b;
+      margin: 10px 0;
+    }
+
+    a {
+      color: #9b3d2e;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: #ff6f61;
+      transform: scale(1.1);
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #ff6f61;
+      transform: translateY(-5px);
+    }
+
+    .walker {
+      font-size: 3rem;
+      position: absolute;
+      top: 85%;
+      left: -50px;
+      animation: bounce 1.5s infinite alternate;
+      transform: scaleX(-1);
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-right: 10px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .icon:hover {
+      color: #ff6f61;
+      transform: scale(1.2);
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+
+   
+    footer {
+      background-color: #D3B1A3; /* Light brown background */
+      color: #ffffff; /* White text */
+      text-align: center;
+      padding: 20px 0;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+    <h1>Contact Me</h1>
+    <p>✉️ : <a href="mailto:nnadhilah4@gmail.com" class="icon"> Email me</a></p>
+    <p>📞: <a href="tel:+60198393799" class="icon">Call me</a></p>
+    <p>💬: <a href="https://wa.me/qr/7REG5LUBZZQTF1" target="_blank" class="icon"> Chat on WhatsApp</a></p>
+    <a href="aboutme.htm" class="back-link">← 🐻 </a>
+  </div>
+
+ 
+  <footer>
+    <p>© 2025 | Made by N ฅ^•ﻌ•^ฅ</p>
+  </footer>
+
+</body>
+</html>
